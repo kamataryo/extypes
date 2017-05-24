@@ -1,7 +1,11 @@
+/.nyc_output
+/coverage
 /dist
+/src
 /test
 /.babelrc
 /.eslint*
+/.npmignore
 /.gitignore
 /.travis.yml
 /yarn.lock
