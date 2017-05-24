@@ -1,5 +1,5 @@
 import test from 'ava'
-import $push from 'Array/push'
+import $push from 'Array/$push'
 
 test('Types', t => t.is(typeof $push, 'symbol'))
 

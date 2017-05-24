@@ -1,5 +1,5 @@
 import test from 'ava'
-import $random from 'Array/random'
+import $random from 'Array/$random'
 
 test('Types', t => t.is(typeof $random, 'symbol'))
 

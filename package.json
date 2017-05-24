@@ -1,10 +1,10 @@
 {
-  "name": "@kamataryo/ext-types",
+  "name": "@kamataryo/extypes",
   "version": "0.0.0",
   "author": "kamataryo <kamataryo@users.noreply.github.com>",
   "license": "MIT",
-  "description": "This is toolbox to extend JavaScript built-in Types",
-  "main": "dist/index.js",
+  "description": "JavaScript extension property/method for native types.",
+  "main": "dist",
   "files": [
     "dist"
   ],
@@ -25,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kamataryo/ext-types.git"
+    "url": "git+https://github.com/kamataryo/extypes.git"
   },
   "keywords": [
     "javascript",
@@ -33,15 +33,16 @@
     "extend"
   ],
   "bugs": {
-    "url": "https://github.com/kamataryo/ext-types/issues"
+    "url": "https://github.com/kamataryo/extypes/issues"
   },
-  "homepage": "https://github.com/kamataryo/ext-types#readme",
+  "homepage": "https://github.com/kamataryo/extypes#readme",
   "devDependencies": {
     "ava": "^0.19.1",
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-env": "^1.5.1",
+    "babel-register": "^6.24.1",
     "eslint": "^3.19.0",
     "eslint-plugin-ava": "^4.2.0",
     "eslint-plugin-import": "^2.2.0"

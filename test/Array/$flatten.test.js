@@ -1,5 +1,5 @@
 import test from 'ava'
-import $flatten from 'Array/flatten'
+import $flatten from 'Array/$flatten'
 
 test('Types', t => t.is(typeof $flatten, 'symbol'))
 
