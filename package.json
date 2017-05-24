@@ -1,6 +1,6 @@
 {
   "name": "@kamataryo/extypes",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "kamataryo <kamataryo@users.noreply.github.com>",
   "license": "MIT",
   "description": "JavaScript extension property/method for native types.",
