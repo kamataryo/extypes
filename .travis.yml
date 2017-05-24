@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+- '7'
+cache:
+  yarn: true
+  directories:
+  - "~/.cache/yarn"
+before_script:
+- npm run build
+script:
+- npm run lint
+- npm test
+after_success:
+- npm run deploy:demo
+deploy:
+  provider: npm
+  email: kamataryo@users.noreply.github.com
+  on:
+    tags: true
+  skip_cleanup: true
+  api_key:
+    secure: bSj+PEuzHf4aQ8MJWszlk4MLzkeBeUGWuKAbtM0exryGA0UeX4HlsIMtifWNvPhKIgFfwflagyWz2VHvH8aq+JeaHH4CZdsQ1VKY+ngkxsDHD1Nu/JFbVDtf7KCq1aCN6qItKTBjcRWmZgkYCli+M8CwFZ2REFNIcMwbkiLyJ1jvxLkjElKGgoT/5OpQQP+na4PZ5Esc/uGqMTkEAcNEgrThzrTTBqGBPX4OAan+Y5wkQ/vDuCkVouOz1O5u3mCcwr0d8q+hNMK2tJ81YOi1UZrxUrUCeCoBfC9GXgAcSXq/3E2nd4QYZX0wwx3iVrRc+4A6WNGRdEPrG3ju446AimX9lXlogG+xF6nlRPL/UbeWpcMlQz1GLr8P/GoSliiyQK9R/KuFEqxeV5bht7aMtNAWnapXiEcVoA6PL7pt0udevCeOyzprI3K0GYqyKFZ8xFaUEg+3BFtXFkhPxgf/GSntY9ptVRjks0SKtfdRf6mX73xBkwZRAyvk1t8WMLNGba8Oc4BeRTNkPW8Q6oEwup3NsGvjn2/enhP/pTC4yajMYI529gQJ86TJQDKat42C6dQNjTlx1KDHo24WEkZ54D4gogyj5YFON8JCNM5HwDPjOZAbUrnHOyTIt7RZNO5nvwtNLAt2/S0kE9FJiIvPPIJgN/qQqqrwAYR5uwZszOE=
