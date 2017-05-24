@@ -1,4 +1,4 @@
-const $toRange = Symbol('torange')
+const $toRange = Symbol('toRange')
 
 
 if (!Number.prototype[$toRange]) {

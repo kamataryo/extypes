@@ -1,7 +1,7 @@
 import test from 'ava'
-import $torange from 'Number/$torange'
+import $toRange from 'Number/$toRange'
 
 test('toRange', t => t.deepEqual(
-  12[$torange](),
+  12[$toRange](),
   [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 ))
