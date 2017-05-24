@@ -13,6 +13,7 @@ script:
 after_success:
 - npm run coverage
 - node_modules/.bin/codecov
+- mv ./src/* ./
 deploy:
   provider: npm
   email: kamataryo@users.noreply.github.com

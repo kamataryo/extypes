@@ -6,7 +6,8 @@
   "description": "JavaScript extension property/method for native types.",
   "main": "./dist/index.js",
   "files": [
-    "dist"
+    "./index.js",
+    "./Array"
   ],
   "publishConfig": {
     "access": "public"
