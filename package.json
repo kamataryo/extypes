@@ -9,8 +9,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "babel ./src --out-dir ./dist --source-maps inline",
-    "build:prod": "babel ./src --out-dir ./dist",
+    "build": "tsc -p ./",
     "lint": "eslint . --ext=jsx --ext=js",
     "tokengen": "travis encrypt $([[ $(cat $HOME/.npmrc) =~ _authToken=(.*)$ ]] && echo ${BASH_REMATCH[1]}) --add deploy.api_key",
     "test": "NODE_PATH=./src ava",
@@ -20,11 +19,7 @@
   "ava": {
     "files": [
       "test/**/*.test.js"
-    ],
-    "require": [
-      "babel-register"
-    ],
-    "babel": "inherit"
+    ]
   },
   "repository": {
     "type": "git",
@@ -41,15 +36,12 @@
   "homepage": "https://github.com/kamataryo/extypes#readme",
   "devDependencies": {
     "ava": "^0.19.1",
-    "babel-cli": "^6.24.1",
-    "babel-eslint": "^7.2.3",
-    "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-preset-env": "^1.5.1",
-    "babel-register": "^6.24.1",
     "codecov": "^2.2.0",
     "eslint": "^3.19.0",
     "eslint-plugin-ava": "^4.2.0",
     "eslint-plugin-import": "^2.2.0",
-    "nyc": "^10.3.2"
+    "nyc": "^10.3.2",
+    "typescript": "^2.3.3",
+    "typescript-eslint-parser": "^3.0.0"
   }
 }

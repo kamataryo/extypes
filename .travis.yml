@@ -6,7 +6,7 @@ cache:
   directories:
   - "~/.cache/yarn"
 before_script:
-- npm run build:prod
+- npm run build
 script:
 - npm run lint
 - npm test

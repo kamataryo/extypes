@@ -3,8 +3,8 @@ import push    from './$push'
 import random  from './$random'
 
 
-export const $flatten = flatten
-export const $push    = push
-export const $random  = random
+export const $flatten:Symbol = flatten
+export const $push:Symbol    = push
+export const $random:Symbol  = random
 
 export default { $flatten, $push, $random }

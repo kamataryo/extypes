@@ -11,7 +11,7 @@ if (!Array.prototype[$push]) {
    * @param  {Any} x 新しい要素
    * @return {Array} 新しい配列
    */
-  Array.prototype[$push] = function(x) {
+  Array.prototype[$push] = function(x:any) {
     const result = [...this]
     result.push(x)
     return result

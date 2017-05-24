@@ -1,9 +1,4 @@
-/**
- * extend property to get a picked element from an array randomly
- * @file
- */
-
-const $random  = Symbol('random')
+const $random = Symbol('random')
 
 if (!Array.prototype[$random]) {
   Object.defineProperty(Array.prototype, $random, {
@@ -12,7 +7,8 @@ if (!Array.prototype[$random]) {
      * @return {Any} a randomly selected element
      */
     get: function() {
-      return this[Math.floor(Math.random() * this.length)]
+      const self:any[] = this
+      return self[Math.floor(Math.random() * self.length)]
     }
   })
 }

@@ -3,7 +3,6 @@
 /dist
 /src
 /test
-/.babelrc
 /.eslint*
 /.npmignore
 /.gitignore
