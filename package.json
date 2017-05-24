@@ -3,7 +3,7 @@
   "version": "0.0.7",
   "author": "kamataryo <kamataryo@users.noreply.github.com>",
   "license": "MIT",
-  "description": "JavaScript extension property/method for native types.",
+  "description": "JavaScript extension for primitive data types",
   "main": "./index.js",
   "publishConfig": {
     "access": "public"

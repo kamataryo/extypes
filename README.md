@@ -5,7 +5,7 @@
 [![codecov](https://codecov.io/gh/kamataryo/extypes/branch/master/graph/badge.svg)](https://codecov.io/gh/kamataryo/extypes)
 
 
-JavaScript extension for primitive data type.
+JavaScript extension for primitive data types.
 
 ## features
 
