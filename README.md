@@ -1,6 +1,9 @@
 # @kamataryo/extypes
 
 [![Build Status](https://travis-ci.org/kamataryo/extypes.svg?branch=master)](https://travis-ci.org/kamataryo/extypes)
+[![npm version](https://badge.fury.io/js/%40kamataryo%2Fextypes.svg)](https://badge.fury.io/js/%40kamataryo%2Fextypes)
+[![codecov](https://codecov.io/gh/kamataryo/extypes/branch/master/graph/badge.svg)](https://codecov.io/gh/kamataryo/extypes)
+
 
 JavaScript extension property/method for native types.
 

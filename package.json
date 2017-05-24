@@ -16,6 +16,7 @@
     "lint": "eslint . --ext=jsx --ext=js",
     "tokengen": "travis encrypt $([[ $(cat $HOME/.npmrc) =~ _authToken=(.*)$ ]] && echo ${BASH_REMATCH[1]}) --add deploy.api_key",
     "test": "NODE_PATH=./src ava",
+    "coverage": "nyc --reporter=lcov --reporter=text-lcov npm test",
     "postversion": "git push origin master && git push origin $(git tag -l | tail -n1)"
   },
   "ava": {
@@ -49,6 +50,7 @@
     "babel-register": "^6.24.1",
     "eslint": "^3.19.0",
     "eslint-plugin-ava": "^4.2.0",
-    "eslint-plugin-import": "^2.2.0"
+    "eslint-plugin-import": "^2.2.0",
+    "nyc": "^10.3.2"
   }
 }

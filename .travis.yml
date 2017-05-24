@@ -5,13 +5,16 @@ cache:
   yarn: true
   directories:
   - "~/.cache/yarn"
+install:
+  - "yarn add codecov --global"
 before_script:
 - npm run build
 script:
 - npm run lint
 - npm test
 after_success:
-- npm run deploy:demo
+- npm run coverage
+- codecov
 deploy:
   provider: npm
   email: kamataryo@users.noreply.github.com
