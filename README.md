@@ -7,6 +7,11 @@
 
 JavaScript extension property/method for native types.
 
+## features
+
+- colision free with `Symbol` property
+- Partial import for each type/property/method saves file size when your project bundled
+
 ## install
 
 ```shell
@@ -65,3 +70,8 @@ $ npm version patch -m "some patch"
 $ npm version minor -m "some minor update"
 $ npm version major -m "some major update"
 ```
+
+## TODOs
+
+- check performance
+- How to deal with Lodash/Underscore?
