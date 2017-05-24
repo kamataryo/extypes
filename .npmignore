@@ -1,0 +1,7 @@
+/dist
+/test
+/.babelrc
+/.eslint*
+/.gitignore
+/.travis.yml
+/yarn.lock

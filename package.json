@@ -4,11 +4,7 @@
   "author": "kamataryo <kamataryo@users.noreply.github.com>",
   "license": "MIT",
   "description": "JavaScript extension property/method for native types.",
-  "main": "./dist/index.js",
-  "files": [
-    "./index.js",
-    "./Array"
-  ],
+  "main": "./index.js",
   "publishConfig": {
     "access": "public"
   },
