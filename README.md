@@ -5,12 +5,12 @@
 [![codecov](https://codecov.io/gh/kamataryo/extypes/branch/master/graph/badge.svg)](https://codecov.io/gh/kamataryo/extypes)
 
 
-JavaScript extension property/method for native types.
+JavaScript extension for primitive data type.
 
 ## features
 
-- colision free with `Symbol` property
-- Partial import for each type/property/method saves file size when your project bundled
+- colision free with `Symbol` property.
+- Partial import is Available. This saves file size when bundled
 
 ## install
 
