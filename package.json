@@ -12,7 +12,8 @@
     "build": "babel ./src --out-dir ./dist --source-maps inline",
     "lint": "eslint . --ext=jsx --ext=js",
     "tokengen": "travis encrypt $([[ $(cat $HOME/.npmrc) =~ _authToken=(.*)$ ]] && echo ${BASH_REMATCH[1]}) --add deploy.api_key",
-    "test": "NODE_PATH=./src ava"
+    "test": "NODE_PATH=./src ava",
+    "postversion": "git push origin master && git push origin $(git tag -l | tail -n1)"
   },
   "ava": {
     "files": [

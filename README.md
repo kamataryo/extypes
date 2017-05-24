@@ -55,3 +55,10 @@ Pick element randomly.
 ```javascript
 [0, 1, 2][$random] // 0, 1, or 2
 ```
+## deployment(for commiters)
+
+```shell
+$ npm version patch -m "some patch"
+$ npm version minor -m "some minor update"
+$ npm version major -m "some major update"
+```
