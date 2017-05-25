@@ -13,11 +13,10 @@ if [[ $(git diff) == "" ]]; then
   exit 0
 fi
 
-npm test
-
 git config user.name 'kamataryo@travis'
 git config user.email "kamataryo@users.noreply.github.com"
-git remote add upstream git@github.com:$TRAVIS_GH_REPO_SLUG.git
+git remote remove origin
+git remote add origin git@github.com:$TRAVIS_GH_REPO_SLUG.git
 git add .
 git commit -m "Upgrade package"
-git push upstream feature
+git push origin master
