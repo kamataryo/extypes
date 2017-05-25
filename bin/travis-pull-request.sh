@@ -19,8 +19,7 @@ else
 
   # install GitHub hub
   HUB_URL="https://github.com/github/hub/releases/download/v2.2.9/hub-linux-arm64-2.2.9.tgz"
-  curl $HUB_URL > "$HOME/hub.tgz"
-  cat $HOME/hub.tgz
+  curl -L $HUB_URL > "$HOME/hub.tgz"
   tar zxvf "$HOME/hub.tgz"
 
   git config user.name 'kamataryo@travis'
