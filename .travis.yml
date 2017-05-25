@@ -14,19 +14,19 @@ cache:
 
 before_script:
   - "npm run build:prod"
+  - "yarn global add codecov"
 
 script:
-  - npm run lint
-  - npm test
+  - "npm run lint"
+  # send coverage
+  - "npm run coverage"
+  - "codecov"
 
 after_success:
   # package auto update pull request
   - "openssl aes-256-cbc -K $encrypted_97f1f67cd4d6_key -iv $encrypted_97f1f67cd4d6_iv -in .travis_ecdsa.enc -out ./.travis_ecdsa -d"
   - "mv ./.travis_ecdsa $HOME/.ssh/id_ecdsa && chmod 600 $HOME/.ssh/id_ecdsa"
   - "./bin/travis-cron-upgrade.sh"
-  # send coverage
-  - "npm run coverage"
-  - "node_modules/.bin/codecov"
   # prepare for publish
   - "cp -r ./dist/* ./"
 
