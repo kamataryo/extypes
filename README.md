@@ -100,6 +100,11 @@ Create zero padding string.
 123[$zeroPadding](5) // '00123'
 ```
 
+## initialization (for commiters)
+
+```shell
+```
+
 ## deployment (for commiters)
 
 ```shell

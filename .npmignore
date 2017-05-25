@@ -1,5 +1,5 @@
 /.nyc_output
-/bin
+/.bin
 /coverage
 /dist
 /src

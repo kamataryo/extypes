@@ -9,7 +9,7 @@ fi
 yarn upgrade
 
 if [[ "$(git --no-pager diff)" == "" ]]; then
-  echo 'nothing to commit'
+  echo 'nothing to deploy automatically.'
   exit 0
 fi
 
