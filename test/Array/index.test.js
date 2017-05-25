@@ -1,18 +1,27 @@
 import test from 'ava'
-import props, {
-  $flatten,
-  $push,
-  $random,
-} from 'Array'
+import fs   from 'fs'
+import path from 'path'
+import * as arrayProps from 'Array'
 
-test('types', t => {
-  t.is(typeof $flatten, 'symbol')
-  t.is(typeof $push,    'symbol')
-  t.is(typeof $random,  'symbol')
+test.cb('All module has been exported', t => {
+  fs.readdir('./src/Array/', (err, paths) => {
+
+    if (err) { throw err }
+
+    const props = paths
+      .map(filename => path.parse(filename).name)
+      .filter(name => name !== 'index')
+
+    const exported = Object.keys(arrayProps)
+      .filter(key => key !== 'default')
+
+    const defaults = Object.keys(arrayProps.default)
+
+    t.deepEqual(props, exported)
+    t.deepEqual(props, defaults)
+    t.end()
+  })
 })
 
-test('defaults', t => {
-  t.is(props.$flatten, $flatten)
-  t.is(props.$push,    $push)
-  t.is(props.$random,  $random)
-})
+Object.keys(arrayProps.default)
+  .forEach(key => test(`${key} is a symbol`, t => t.is(typeof arrayProps.default[key], 'symbol')))

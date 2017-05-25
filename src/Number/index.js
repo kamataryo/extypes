@@ -1,5 +1,10 @@
-import toRange from './$toRange'
+import toRange  from './$toRange'
+import zeroPadding from './$zeroPadding'
 
-export const $toRange = toRange
+export const $toRange  = toRange
+export const $zeroPadding = zeroPadding
 
-export default { $toRange }
+export default {
+  $toRange,
+  $zeroPadding,
+}

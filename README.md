@@ -50,7 +50,7 @@ Flatten array.
 
 #### `Array[$push](any)`
 
-Altenative for `Array.push`.
+Non-destructive altenative method for `Array.push`.
 
 ```javascript
 [0, 1, 2][$push](3) // [0, 1, 2, 3]
@@ -63,7 +63,26 @@ Pick element randomly.
 ```javascript
 [0, 1, 2][$random] // 0, 1, or 2
 ```
-## deployment(for commiters)
+
+### Number
+
+#### `Number[$toRange]()`
+
+Create range array.
+
+```javascript
+100[$toRange]() // [0, 1, ... ,99]
+```
+
+#### `Number[$zeroPadding]()`
+
+Create zero padding string.
+
+```javascript
+123[$zeroPadding](5) // '00123'
+```
+
+## deployment (for commiters)
 
 ```shell
 $ npm version patch -m "some patch"
