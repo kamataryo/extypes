@@ -20,3 +20,6 @@ git remote add origin git@github.com:$TRAVIS_GH_REPO_SLUG.git
 git add .
 git commit -m "Upgrade package"
 git push origin master
+
+npm test
+npm version patch -m "Upgrade package"
