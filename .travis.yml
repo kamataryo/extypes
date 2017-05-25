@@ -12,13 +12,6 @@ cache:
   directories:
     - "~/.cache/yarn"
 
-post_install:
-  # install GitHub hub
-  - "HUB_URL=https://github.com/github/hub/releases/download/v2.2.9/hub-linux-arm64-2.2.9.tgz"
-  - "curl -L $HUB_URL > $HOME/hub.tgz"
-  - "tar zxvf $HOME/hub.tgz -C $HOME"
-  - "export PATH=$PATH:$HOME/hub-linux-arm64-2.2.9/bin/"
-
 before_script:
   - "npm run build:prod"
 
