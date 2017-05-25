@@ -5,7 +5,7 @@ node_js:
 
 env:
   global:
-    TRAVIS_REPO_SLUG: kamataryo/extypes
+    - TRAVIS_REPO_SLUG: kamataryo/extypes
 
 cache:
   yarn: true
@@ -26,7 +26,7 @@ after_success:
   - "./bin/travis-pull-request.sh"
   - "npm run coverage"
   - "node_modules/.bin/codecov"
-  - "cp -r ./dist/* ./""
+  - "cp -r ./dist/* ./"
 
 deploy:
   provider: npm
