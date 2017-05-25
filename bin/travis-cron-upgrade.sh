@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 set -eu
 
-if [[ $TRAVIS_EVENT_TYPE != "cron" ]]; then
-  echo 'Deploy perfomed only on cronjob.'
-  exit 0
-fi
+# if [[ $TRAVIS_EVENT_TYPE != "cron" ]]; then
+#   echo 'Deploy perfomed only on cronjob.'
+#   exit 0
+# fi
 
 
 yarn upgrade
 
-if [[ $(git diff) == "" ]]; then
+if [[ "$(git --no-pager diff)" == "" ]]; then
   exit 0
 fi
 
@@ -19,7 +19,9 @@ git remote remove origin
 git remote add origin git@github.com:$TRAVIS_GH_REPO_SLUG.git
 git add .
 git commit -m "Upgrade package"
-git push origin master
+echo '===== test ====='
+git status
+git branch
 
 npm test
 npm version patch -m "Upgrade package"
