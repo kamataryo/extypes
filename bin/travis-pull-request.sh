@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -eu
 
 if [[ $CI != "true" && $TRAVIS != "true" ]]; then
   echo 'Not available witout travis CI.'
@@ -17,7 +18,7 @@ if [[ $(git diff) == "" ]]; then
 else
 
   # install GitHub hub
-  HUB_URL="https://github.com/github/hub/releases/download/v2.2.9/hub-linux-arm64-2.2.9.tgz"
+  HUB_URL="https://github.com/github/hub/releases/download/v2.2.9/hub-linux-amd64-2.2.9.tgz"
   curl -L $HUB_URL > "$HOME/hub.tgz"
   tar zxvf $HOME/hub.tgz -C $HOME
 
@@ -30,5 +31,5 @@ else
   git add .
   git commit -m "Upgrade package[ci skip]"
   git push upstream $PATCH_NAME
-  $HOME/hub-linux-arm64-2.2.9/bin/hub pull-request -m "Upgrade package"
+  $HOME/hub-linux-amd64-2.2.9/bin/hub pull-request -m "Upgrade package"
 fi
