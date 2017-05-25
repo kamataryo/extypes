@@ -5,7 +5,7 @@ node_js:
 
 env:
   global:
-    - TRAVIS_REPO_SLUG: kamataryo/extypes
+    - TRAVIS_GH_REPO_SLUG: kamataryo/extypes
 
 cache:
   yarn: true
