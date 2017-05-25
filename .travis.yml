@@ -26,6 +26,7 @@ after_success:
   - "./bin/travis-pull-request.sh"
   - "npm run coverage"
   - "node_modules/.bin/codecov"
+  - "echo preparing for npm publish"
   - "cp -r ./dist/* ./"
 
 deploy:

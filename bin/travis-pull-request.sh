@@ -11,16 +11,9 @@ if [[ $TRAVIS_PULL_REQUEST != "false" ]]; then
   exit 0
 fi
 
-type yarn >/dev/null 2>&1 &&
-type yarn >/dev/null 2>&1 ||
+yarn global add npm-check-updates
 
-if [ $? -eq 0 ]; then
-  yarn global add npm-check-updates
-else
-  npm install npm-check-updates --global
-fi
-
-UPGRADE_RESULT=$(ncu -a)
+UPGRADE_RESULT=$("$(yarn bin)/ncu -a")
 
 if [[ $(git diff) == "" ]]; then
   exit 0
@@ -32,6 +25,6 @@ else
   git remote add origin "git@github.com:$TRAVIS_REPO_SLUG.git"
   git checkout -b $PATCH_NAME
   git add .
-  git commit -m "Upgrade package\n$UPGRADE_RESULT"
+  git commit -m "Upgrade package\n\n$UPGRADE_RESULT"
   git push origin $PATCH_NAME
 fi
