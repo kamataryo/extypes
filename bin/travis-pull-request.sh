@@ -11,9 +11,7 @@ if [[ $TRAVIS_PULL_REQUEST != "false" ]]; then
   exit 0
 fi
 
-yarn global add npm-check-updates
-
-UPGRADE_RESULT=$("$(yarn global bin)/ncu -a")
+UPGRADE_RESULT=$(yarn upgrade)
 
 if [[ $(git diff) == "" ]]; then
   exit 0
