@@ -21,6 +21,7 @@ else
   HUB_URL="https://github.com/github/hub/releases/download/v2.2.9/hub-linux-arm64-2.2.9.tgz"
   curl -L $HUB_URL > "$HOME/hub.tgz"
   tar zxvf "$HOME/hub.tgz"
+  export PATH="$PATH:$HOME/hub-linux-amd64-$HUB"
 
   git config user.name 'kamataryo@travis'
   git config user.email "kamataryo@users.noreply.github.com"
@@ -29,6 +30,9 @@ else
   git commit -m "Upgrade package[ci skip]"
   git remote add upstream git@github.com:$TRAVIS_GH_REPO_SLUG.git
   git push upstream $PATCH_NAME
-  tree $HOME/
+  ls $HOME/hub-linux-arm64-2.2.9/bin/hub
+  ls $HOME/hub-linux-arm64-2.2.9/bin
+  ls $HOME/hub-linux-arm64-2.2.9
+  ls $HOME
   $HOME/hub-linux-arm64-2.2.9/bin/hub pull-request -m "Upgrade package"
 fi
