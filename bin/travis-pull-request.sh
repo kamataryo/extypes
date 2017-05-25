@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+#!/usr/bin/env bash
+
+if [[ $CI != "true" && $TRAVIS != "true" ]]; then
+  echo 'Not available witout travis CI.'
+  exit 0
+fi
+
+if [[ $TRAVIS_PULL_REQUEST != "false" ]]; then
+  echo 'Not deploying from Pull Request.'
+  exit 0
+fi
+
+type yarn >/dev/null 2>&1 &&
+type yarn >/dev/null 2>&1 ||
+
+if [ $? -eq 0 ]; then
+  yarn global add npm-check-updates
+else
+  npm install npm-check-updates --global
+fi
+
+UPGRADE_RESULT=$(ncu -a)
+
+if [[ $(git diff) == "" ]]; then
+  exit 0
+else
+  PATCH_NAME=patch-package-upgrade-$(date '+%s')
+
+  git config user.name 'kamataryo@travis'
+  git config user.email "kamataryo@users.noreply.github.com"
+  git remote add origin "git@github.com:$TRAVIS_REPO_SLUG.git"
+  git checkout -b $PATCH_NAME
+  git add .
+  git commit -m "Upgrade package\n$UPGRADE_RESULT"
+  git push origin $PATCH_NAME
+fi

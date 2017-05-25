@@ -1,3 +1,5 @@
+/.travis_ecdsa
+/.travis_ecdsa.pub
 /.eslintcache
 /node_modules
 /.nyc_output

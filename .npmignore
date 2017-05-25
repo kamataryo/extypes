@@ -1,4 +1,5 @@
 /.nyc_output
+/bin
 /coverage
 /dist
 /src
@@ -9,3 +10,5 @@
 /.gitignore
 /.travis.yml
 /yarn.lock
+/.travis_ecdsa
+/.travis_ecdsa.*
