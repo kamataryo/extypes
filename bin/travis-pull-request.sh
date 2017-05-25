@@ -11,18 +11,27 @@ if [[ $TRAVIS_PULL_REQUEST != "false" ]]; then
   exit 0
 fi
 
-UPGRADE_RESULT=$(yarn upgrade)
+yarn upgrade
+UPGRADE_RESULT=$(git diff)
 
-if [[ $(git diff) == "" ]]; then
+if [[ $UPGRADE_RESULT == "" ]]; then
   exit 0
 else
   PATCH_NAME=patch-package-upgrade-$(date '+%s')
+
+  # install github hub
+  HUB_VERSION=2.2.9
+  curl -LO "https://github.com/github/hub/releases/download/v$HUB_VERSION/hub-linux-amd64-$HUB_VERSION.tar.gz"
+  tar -C "$HOME" -zxf "hub-linux-amd64-$HUB_VERSION.tar.gz"
+  export PATH="$PATH:$HOME/hub-linux-amd64-$HUB_VERSION"
+
 
   git config user.name 'kamataryo@travis'
   git config user.email "kamataryo@users.noreply.github.com"
   git remote add origin "git@github.com:$TRAVIS_REPO_SLUG.git"
   git checkout -b $PATCH_NAME
   git add .
-  git commit -m "Upgrade package\n\n$UPGRADE_RESULT"
+  git commit -m "Upgrade package"
   git push origin $PATCH_NAME
+  hub pull-request -m "$UPGRADE_RESULT"
 fi
