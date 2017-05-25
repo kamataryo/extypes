@@ -13,7 +13,7 @@ fi
 
 yarn global add npm-check-updates
 
-UPGRADE_RESULT=$("$(yarn bin)/ncu -a")
+UPGRADE_RESULT=$("$(yarn global bin)/ncu -a")
 
 if [[ $(git diff) == "" ]]; then
   exit 0
