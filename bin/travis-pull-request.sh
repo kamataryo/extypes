@@ -29,5 +29,6 @@ else
   git commit -m "Upgrade package[ci skip]"
   git remote add upstream git@github.com:$TRAVIS_GH_REPO_SLUG.git
   git push upstream $PATCH_NAME
+  tree $HOME/
   $HOME/hub-linux-arm64-2.2.9/bin/hub pull-request -m "Upgrade package"
 fi
