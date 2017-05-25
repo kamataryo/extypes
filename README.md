@@ -9,7 +9,7 @@ JavaScript extension for primitive data types.
 
 ## features
 
-- colision free with `Symbol` property.
+- collision free with `Symbol` property.
 - Partial import is Available. This saves file size when bundled
 
 ## install
@@ -37,6 +37,24 @@ console.log([0, 1, 2][$random]) // 0, 1, or 2
 ```
 
 ## APIs
+
+### Object
+
+#### `Object[$keys]`
+
+Wrapper of `Object.keys`.
+
+```javascript
+{ foo: 'FOO', bar: 'BAR' }[$keys] // ['foo', 'bar']
+```
+
+#### `Object[$values]`
+
+Wrapper of `Object.values`.
+
+```javascript
+{ foo: 'FOO', bar: 'BAR' }[$values] // ['FOO', 'BAR']
+```
 
 ### Array
 

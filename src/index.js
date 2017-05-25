@@ -1,4 +1,9 @@
-import Array  from 'Array'
-import Number from 'Number'
+import _Array  from 'Array'
+import _Number from 'Number'
+import _Object from 'Object'
 
-export default { Array, Number }
+export default {
+  Array  : _Array,
+  Number : _Number,
+  Object : _Object,
+}
