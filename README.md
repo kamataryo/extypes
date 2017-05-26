@@ -66,6 +66,14 @@ Wrapper of `Object.values`.
 
 ### Array
 
+#### `Array[$cummulatives]`
+
+get cummulative values of the array.
+
+```javascript
+[1, 10, 100][$cummulative] // [1, 11, 111]
+``` 
+
 ####  `Array[$flatten]()`
 
 Flatten array.
