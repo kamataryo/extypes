@@ -1,12 +1,13 @@
-import test         from 'ava'
-import props        from 'index'
-import arrayProps   from 'Array'
-import booleanProps from 'Boolean'
-import dateProps    from 'Date'
-import numberProps  from 'Number'
-import objectProps  from 'Object'
-import stringProps  from 'String'
-import symbolProps  from 'Symbol'
+import test          from 'ava'
+import props         from 'index'
+import arrayProps    from 'Array'
+import booleanProps  from 'Boolean'
+import dateProps     from 'Date'
+import functionProps from 'Function'
+import numberProps   from 'Number'
+import objectProps   from 'Object'
+import stringProps   from 'String'
+import symbolProps   from 'Symbol'
 
 
 test('Parental object of Array', t => {
@@ -19,6 +20,10 @@ test('Parental object of Boolean', t => {
 
 test('Parental object of Date', t => {
   t.is(props.Date, dateProps)
+})
+
+test('Parental object of Function', t => {
+  t.is(props.Function, functionProps)
 })
 
 test('Parental object of Number', t => {
