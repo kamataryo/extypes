@@ -2,6 +2,10 @@ const $toRange = Symbol('toRange')
 
 if (!Number.prototype[$toRange]) {
 
+  /**
+   * toRange
+   * @return {Array} Range
+   */
   Number.prototype[$toRange] = function() {
     const result = []
     for (var i = 0; i < this; i++) {

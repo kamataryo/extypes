@@ -2,7 +2,7 @@ const $flatten = Symbol('flatten')
 
 if (!Array.prototype[$flatten]) {
   /**
-   * [description]
+   * shallow flatten of array
    * @return {Array} flattened array
    */
   Array.prototype[$flatten] = function() {

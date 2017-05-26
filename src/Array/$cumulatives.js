@@ -4,6 +4,10 @@ if (!Array.prototype[$cumulatives]) {
 
   Object.defineProperty(Array.prototype, $cumulatives, {
 
+    /**
+     * get cumulatives of the given array
+     * @return {Array} cumulative
+     */
     get: function() {
       return this
         .reduce((prev, x) => {
