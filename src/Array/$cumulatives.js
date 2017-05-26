@@ -6,10 +6,12 @@ if (!Array.prototype[$cumulatives]) {
 
     get: function() {
       return this
-        .reduce((prev, x) => ({
-          cumulative : prev.cumulative + x,
-          result     : prev.result.concat([prev.cumulative + x]),
-        }), { cumulative: 0, result: [] })
+        .reduce((prev, x) => {
+          const nextValue = prev.cumulative + x
+          prev.cumulative = nextValue
+          prev.result.push(nextValue)
+          return prev
+        }, { cumulative: 0, result: [] })
         .result
     }
   })

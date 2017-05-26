@@ -1,3 +1,4 @@
+import $cummulatives from './$cumulatives'
 const $weightedRandom  = Symbol('weightedRandom')
 
 if (!Array.prototype[$weightedRandom]) {
@@ -20,22 +21,13 @@ if (!Array.prototype[$weightedRandom]) {
 
     const sum = weights.reduce((prev, x) => prev + x, 0)
 
-    const cumulatives = weights
-      .map(x => accuracy * x / sum)
-      .reduce((prev, x) => ({
-        value      : x,
-        cumulative : prev.cumulative + x,
-        result     : prev.result.concat([prev.cumulative + x]),
-      }), { value: 0, cumulative: 0, result: [] })
-      .result
+    const cumulatives = weights.map(x => accuracy * x / sum)[$cummulatives]
 
     const lucky = Math.floor(Math.random() * accuracy)
 
-    const index = cumulatives
-      .map(x => x < lucky)
-      .indexOf(false)
+    const targetIndex = cumulatives.map(x => x < lucky).indexOf(false)
 
-    return self[index]
+    return self[targetIndex]
   }
 }
 
