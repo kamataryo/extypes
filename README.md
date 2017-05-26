@@ -92,17 +92,27 @@ Create range array.
 100[$toRange]() // [0, 1, ... ,99]
 ```
 
-#### `Number[$zeroPadding]()`
+#### `Number[$zeroPadding](int, dec)`
 
 Create zero padding string.
 
 ```javascript
 123[$zeroPadding](5) // '00123'
+1.2[$zeroPadding](false, 3) // '1.200'
+12.3[$zeroPadding](3, 3) // '012.300'
 ```
 
-## initialization (for commiters)
+## initialize deploy secrets (for commiters)
+
+Below initializes..
+
+- encrypted npm deploy token
+- encrypted GitHub deploy key
+
+and send new private key to the concerned remote repository.
 
 ```shell
+$ .bin/travis-setup.sh kamataryo/extypes
 ```
 
 ## deployment (for commiters)
@@ -116,4 +126,5 @@ $ npm version major -m "some major update"
 ## TODOs
 
 - check performance
+- invalid arguments
 - How to deal with Lodash/Underscore?

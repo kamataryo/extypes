@@ -14,6 +14,7 @@
     "lint": "eslint . --ext=jsx --ext=js",
     "test": "NODE_PATH=./src ava",
     "coverage": "nyc --reporter=lcov --reporter=text-lcov npm test",
+    "preversion": "npm run lint && npm test",
     "postversion": "git push origin master && git push origin $(git tag -l | tail -n1)"
   },
   "ava": {
