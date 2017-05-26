@@ -82,6 +82,16 @@ Pick element randomly.
 [0, 1, 2][$random] // 0, 1, or 2
 ```
 
+### Function
+
+#### `Function[$partialApply](...args)`
+
+Curry the function.
+
+```javascript
+((a, b, c) => a + b + c)[$partialApply](1) // (b + c) => 1 + b + c
+```
+
 ### Number
 
 #### `Number[$toRange]()`
