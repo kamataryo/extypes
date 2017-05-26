@@ -1,11 +1,18 @@
 # @kamataryo/extypes
 
 [![Build Status](https://travis-ci.org/kamataryo/extypes.svg?branch=master)](https://travis-ci.org/kamataryo/extypes)
-[![npm version](https://badge.fury.io/js/%40kamataryo%2Fextypes.svg)](https://badge.fury.io/js/%40kamataryo%2Fextypes)
-[![codecov](https://codecov.io/gh/kamataryo/extypes/branch/master/graph/badge.svg)](https://codecov.io/gh/kamataryo/extypes)
+[![Codecov branch](https://img.shields.io/codecov/c/github/kamataryo/extypes/master.svg)](https://codecov.io/gh/kamataryo/extypes)
+
+[![npm (scoped)](https://img.shields.io/npm/v/@kamataryo/extypes.svg)](https://www.npmjs.com/package/@kamataryo/extypes)
+[![downloads](https://img.shields.io/npm/dt/@kamataryo/extypes.svg?style=flat)](https://david-dm.org/@kamataryo/extypes#info=devDependencies)
+
+[![Dependency Status](https://img.shields.io/david/kamataryo/extypes.svg?style=flat)](https://david-dm.org/@kamataryo/extypes)
+[![devDependency Status](https://img.shields.io/david/dev/kamataryo/extypes.svg?style=flat)](https://david-dm.org/kamataryo/extypes#info=devDependencies)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
-JavaScript extension for primitive data types.
+Light and safe JavaScript Data type extensions.
 
 ## features
 

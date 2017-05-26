@@ -3,7 +3,7 @@
   "version": "0.2.4",
   "author": "kamataryo <kamataryo@users.noreply.github.com>",
   "license": "MIT",
-  "description": "JavaScript extension for primitive data types",
+  "description": "Light and safe JavaScript Data type extensions",
   "main": "./index.js",
   "publishConfig": {
     "access": "public"
