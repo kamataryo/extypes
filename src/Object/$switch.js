@@ -5,6 +5,11 @@ const $switch = Symbol('switch')
 
   get: function() {
 
+    /**
+     * switz context
+     * @param  {Context} t context object
+     * @return {Switz}   Switz object
+     */
     const switchSubject = t => switz(this, t)
 
     const chain = {
