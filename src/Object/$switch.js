@@ -5,12 +5,19 @@ const $switch = Symbol('switch')
 
   get: function() {
 
+    const switchSubject = t => switz(this, t)
+
     const chain = {
-      case: (matcher, cb) => {
-        switz(this, t => {
-          t.case(matcher, cb)
-        })
+      matcher: matcher => {
+        switchSubject(t => t.matcher(matcher))
         return chain
+      },
+      case: (condition, handler) => {
+        switchSubject(t => t.case(condition, handler))
+        return chain
+      },
+      default: handler => {
+        switchSubject(t => t.default(handler))
       }
     }
     return chain

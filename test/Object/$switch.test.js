@@ -10,3 +10,12 @@ test.cb('switch', t => 'abc'[$switch]
     t.end()
   })
 )
+
+test.cb('switch default', t => 'abc'[$switch]
+  .case('ABC', () => t.true(false))
+  .case('ABc', () => t.true(false))
+  .default(() => {
+    t.true(true)
+    t.end()
+  })
+)

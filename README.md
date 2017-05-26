@@ -64,6 +64,19 @@ Wrapper of `Object.values`.
 { foo: 'FOO', bar: 'BAR' }[$values] // ['FOO', 'BAR']
 ```
 
+#### `Object[$switch]`
+
+Wrapper of [switz](https://www.npmjs.com/package/switz).
+
+
+```javascript
+'abc'[$switch]
+  .case('ABC', () => console.log('not match'))
+  .case('abc', () => console.log('match!'))
+  .default(() => console.log('not match'))
+// 'match!'
+```
+
 ### Array
 
 #### `Array[$cummulatives]`
@@ -72,7 +85,7 @@ get cummulative values of the array.
 
 ```javascript
 [1, 10, 100][$cummulative] // [1, 11, 111]
-``` 
+```
 
 ####  `Array[$flatten]()`
 
