@@ -1,14 +1,9 @@
-/**
- * Extends type Array
- * @file
- */
-
 const $flatten = Symbol('flatten')
 
 if (!Array.prototype[$flatten]) {
   /**
    * [description]
-   * @return {Array} flattenされた配列
+   * @return {Array} flattened array
    */
   Array.prototype[$flatten] = function() {
 

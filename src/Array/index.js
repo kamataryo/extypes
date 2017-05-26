@@ -7,4 +7,8 @@ export const $flatten = flatten
 export const $push    = push
 export const $random  = random
 
-export default { $flatten, $push, $random }
+export default {
+  $flatten,
+  $push,
+  $random,
+}

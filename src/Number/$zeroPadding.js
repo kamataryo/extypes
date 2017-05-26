@@ -1,6 +1,5 @@
 const $zeroPadding = Symbol('zeroPadding')
 
-
 if (!Number.prototype[$zeroPadding]) {
 
   /**
@@ -11,7 +10,7 @@ if (!Number.prototype[$zeroPadding]) {
    */
   Number.prototype[$zeroPadding] = function(digitA = false, digitB = false) {
 
-    const [a, b] = this.toString().split('.').map(x => x + '')
+    const [a, b] = this.toString().split('.').map(x => x + '') // [integer part, decimal part]
     const result = [
       (digitA === false ? a : (Array(digitA + 1).join('0') + a).slice(-1 * (digitA))),
       (digitB === false ? b : (b + Array(digitB).join('0')).slice(0, digitB)),

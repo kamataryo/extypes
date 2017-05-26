@@ -1,8 +1,3 @@
-/**
- * extend property to get a picked element from an array randomly
- * @file
- */
-
 const $random  = Symbol('random')
 
 if (!Array.prototype[$random]) {

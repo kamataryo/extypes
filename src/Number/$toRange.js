@@ -1,6 +1,5 @@
 const $toRange = Symbol('toRange')
 
-
 if (!Number.prototype[$toRange]) {
 
   Number.prototype[$toRange] = function() {
