@@ -2,6 +2,8 @@
 set -eu
 
 if [[ $TRAVIS_EVENT_TYPE != "cron" || $TRAVIS_BRANCH == "master" ]]; then
+  echo "TRAVIS_EVENT_TYPE=$TRAVIS_EVENT_TYPE"
+  echo "TRAVIS_BRANCH=$TRAVIS_BRANCH"
   echo 'Deploy perfomed only on cronjob and with master.'
   exit 0
 fi
