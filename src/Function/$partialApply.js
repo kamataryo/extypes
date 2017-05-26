@@ -1,3 +1,5 @@
+import $appliedArguments from './$appliedArguments'
+
 const $partialApply = Symbol('partialApply')
 
 if (!Function.prototype[$partialApply]) {
@@ -5,9 +7,12 @@ if (!Function.prototype[$partialApply]) {
   Function.prototype[$partialApply] = function() {
     const self = this
     const applyingArguments = arguments
-    return function() {
+
+    const curried = function() {
       return self(...[...applyingArguments, ...arguments])
     }
+    curried[$appliedArguments] = [...applyingArguments]
+    return curried
   }
 }
 

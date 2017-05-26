@@ -99,6 +99,14 @@ Curry the function.
 ((a, b, c) => a + b + c)[$partialApply](1) // (b + c) => 1 + b + c
 ```
 
+#### `Function[$appliedArguments]`
+
+Applied argument after curried.
+
+```javascript
+((a, b, c) => a + b + c)[$partialApply](1, 2)[$appliedArguments] // [1, 2]
+```
+
 ### Number
 
 #### `Number[$toRange]()`
@@ -114,9 +122,9 @@ Create range array.
 Create zero padding string.
 
 ```javascript
-123[$zeroPadding](5) // '00123'
-1.2[$zeroPadding](false, 3) // '1.200'
-12.3[$zeroPadding](3, 3) // '012.300'
+123[$zeroPadding](5)         // '00123'
+1.23[$zeroPadding](false, 3) // '1.230'
+12.3[$zeroPadding](3, 3)     // '012.300'
 ```
 
 ## initialize deploy secrets (for commiters)
