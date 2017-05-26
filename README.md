@@ -84,10 +84,18 @@ Non-destructive altenative method for `Array.push`.
 
 #### `Array[$random]`
 
-Pick element randomly.
+Pick an element randomly.
 
 ```javascript
 [0, 1, 2][$random] // 0, 1, or 2
+```
+
+#### `Array[$weightedRandom](array)`
+
+Pick an element randomly and weightedly.
+
+```javascript
+[0, 1, 2][$weightedRandom]([1, 1, 2]) // 0(25%), 1(25%) or 2(50%)
 ```
 
 ### Function
