@@ -1,6 +1,7 @@
 # @kamataryo/extypes
 
 [![Build Status](https://travis-ci.org/kamataryo/extypes.svg?branch=master)](https://travis-ci.org/kamataryo/extypes)
+[![Code Climate](https://codeclimate.com/github/kamataryo/extypes/badges/gpa.svg)](https://codeclimate.com/github/kamataryo/extypes)
 [![Codecov branch](https://img.shields.io/codecov/c/github/kamataryo/extypes/master.svg)](https://codecov.io/gh/kamataryo/extypes)
 
 [![npm (scoped)](https://img.shields.io/npm/v/@kamataryo/extypes.svg)](https://www.npmjs.com/package/@kamataryo/extypes)
