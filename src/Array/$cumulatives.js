@@ -11,9 +11,8 @@ if (!Array.prototype[$cumulatives]) {
     get: function() {
       return this
         .reduce((prev, x) => {
-          const nextValue = prev.cumulative + x
-          prev.cumulative = nextValue
-          prev.result.push(nextValue)
+          prev.result.push(prev.cumulative + x)
+          prev.cumulative += x
           return prev
         }, { cumulative: 0, result: [] })
         .result

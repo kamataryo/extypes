@@ -8,6 +8,7 @@
 /.eslint*
 /.npmignore
 /.gitignore
+/.codeclimate.yml
 /.travis.yml
 /yarn.lock
 /.travis_ecdsa
