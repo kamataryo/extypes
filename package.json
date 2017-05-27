@@ -9,8 +9,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "babel ./src --out-dir ./dist --source-maps inline",
-    "build:prod": "babel ./src --out-dir ./dist",
+    "build": "babel ./src --out-dir ./dist --source-maps true",
     "lint": "eslint . --ext=jsx --ext=js",
     "test": "NODE_PATH=./src ava",
     "coverage": "nyc --reporter=lcov --reporter=text-lcov npm test",

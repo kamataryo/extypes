@@ -1,15 +1,10 @@
-/.nyc_output
-/.bin
+# not necessary files
+/.*
 /coverage
+
+# /dist/* will be extracted at project root.
+# Folder is not needed any more.
 /dist
-/src
+
+# tests
 /test
-/.babelrc
-/.eslint*
-/.npmignore
-/.gitignore
-/.codeclimate.yml
-/.travis.yml
-/yarn.lock
-/.travis_ecdsa
-/.travis_ecdsa.*

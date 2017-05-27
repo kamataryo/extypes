@@ -1,8 +1,15 @@
+# keys whih not should be pushed
 /.travis_ecdsa
 /.travis_ecdsa.pub
+
+# cashe and log
 /.eslintcache
-/node_modules
+*.log
 /.nyc_output
+
+# libraries
+/node_modules
+
+# artifacts
 /coverage
 /dist
-*.log

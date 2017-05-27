@@ -5,7 +5,7 @@ node_js:
 
 env:
   global:
-    - TRAVIS_GH_REPO_SLUG: kamataryo/extypes
+    - GH_REF: kamataryo/extypes
 
 cache:
   yarn: true
@@ -13,22 +13,25 @@ cache:
     - "~/.cache/yarn"
 
 before_script:
-  - "npm run build:prod"
+  - "npm run build"
   - "yarn global add codecov"
 
 script:
   - "npm run lint"
   # send coverage
-  - "npm run coverage"
+  - "npm run coverage >/dev/null 2>&1"
   - "codecov"
 
 after_success:
-  # package auto update pull request
+  # prepare GitHub deploy keys
   - "openssl aes-256-cbc -K $encrypted_97f1f67cd4d6_key -iv $encrypted_97f1f67cd4d6_iv -in .travis_ecdsa.enc -out ./.travis_ecdsa -d"
   - "mv ./.travis_ecdsa $HOME/.ssh/id_ecdsa && chmod 600 $HOME/.ssh/id_ecdsa"
-  - "./.bin/travis-cron-upgrade.sh"
-  # prepare for publish
-  - "cp -r ./dist/* ./"
+  # package upgrade
+  - "[ $TAG == '' ] && ./.bin/travis-cron-upgrade.sh"
+
+before_deploy:
+  # shallow output for partial import, such as `import '@kamataryo/extypes/Array/$random'`
+  - "[ $TAG != '' ] && babel ./src --out-dir ./ --source-maps true"
 
 deploy:
   provider: npm
