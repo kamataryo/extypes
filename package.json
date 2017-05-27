@@ -1,6 +1,6 @@
 {
   "name": "@kamataryo/extypes",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "author": "kamataryo <kamataryo@users.noreply.github.com>",
   "license": "MIT",
   "description": "Light and safe JavaScript Data type extensions",
