@@ -27,11 +27,11 @@ after_success:
   - "openssl aes-256-cbc -K $encrypted_97f1f67cd4d6_key -iv $encrypted_97f1f67cd4d6_iv -in .travis_ecdsa.enc -out ./.travis_ecdsa -d"
   - "mv ./.travis_ecdsa $HOME/.ssh/id_ecdsa && chmod 600 $HOME/.ssh/id_ecdsa"
   # package upgrade
-  - "[ $TAG == '' ] && ./.bin/travis-cron-upgrade.sh"
+  - '[ "$TRAVIS_TAG" == "" ] && ./.bin/travis-cron-upgrade.sh'
 
 before_deploy:
   # shallow output for partial import, such as `import '@kamataryo/extypes/Array/$random'`
-  - "[ $TAG != '' ] && babel ./src --out-dir ./ --source-maps true"
+  - '[ "TRAVIS_$TAG" != "" ] && babel ./src --out-dir ./ --source-maps true'
 
 deploy:
   provider: npm
