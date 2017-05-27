@@ -25,7 +25,7 @@ if (!Array.prototype[$weightedRandom]) {
 
     const lucky = Math.floor(Math.random() * accuracy)
 
-    const targetIndex = cumulatives.map(x => x < lucky).indexOf(false)
+    const targetIndex = cumulatives.map(x => x <= lucky).indexOf(false)
 
     return self[targetIndex]
   }
