@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-set -eu
+set -e
 
-BRANCH_TO_DEPLOY=__travis-branch-to-deploy
+BRANCH_TO_DEPLOY="__travis-branch-to-deploy"
 
-if [[ $TRAVIS_EVENT_TYPE != "cron" || $TRAVIS_BRANCH != "master" ]]; then
+if [ $TRAVIS_EVENT_TYPE != "cron" ] || [ $TRAVIS_BRANCH != "master" ]; then
   echo "TRAVIS_EVENT_TYPE=$TRAVIS_EVENT_TYPE"
   echo "TRAVIS_BRANCH=$TRAVIS_BRANCH"
   echo 'Auto-upgrade perfomed only on cronjob and with `master` branch.'
@@ -12,7 +12,7 @@ fi
 
 yarn upgrade
 
-if [[ "$(git --no-pager diff)" == "" ]]; then
+if [[ $(git --no-pager diff) == "" ]]; then
   echo 'nothing to deploy automatically.'
   exit 0
 fi
