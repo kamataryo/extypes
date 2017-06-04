@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
-if [[ $TRAVIS_TAG == "" ]]; then
+if [[ $TRAVIS_TAG != "" ]]; then
+  echo "TRAVIS_TAG=$TRAVIS_TAG"
   echo 'Auto-upgrade will not be perfomed against tagged commit.'
   exit 0
 fi
