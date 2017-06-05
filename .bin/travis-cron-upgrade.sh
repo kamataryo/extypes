@@ -16,7 +16,7 @@ if [ $TRAVIS_EVENT_TYPE != "cron" ] || [ $TRAVIS_BRANCH != "master" ]; then
   exit 0
 fi
 
-yarn upgrade
+ncu -u
 
 if [[ $(git --no-pager diff) == "" ]]; then
   echo 'nothing to deploy automatically.'
