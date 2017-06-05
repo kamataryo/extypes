@@ -11,7 +11,7 @@
   "scripts": {
     "build": "babel ./src --out-dir ./dist --source-maps true",
     "lint": "eslint . --ext=jsx --ext=js",
-    "test": "NODE_PATH=./src ava",
+    "test": "cross-env NODE_PATH=./src ava",
     "coverage": "nyc --reporter=lcov --reporter=text-lcov npm test",
     "preversion": "npm run lint && npm test",
     "postversion": "git pull origin master && git push origin master && git push origin $(git tag -l --sort=v:refname 'v*.*.*' | tail -n1)"
@@ -45,6 +45,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-env": "^1.5.1",
     "babel-register": "^6.24.1",
+    "cross-env": "^5.0.0",
     "eslint": "^3.19.0",
     "eslint-plugin-ava": "^4.2.0",
     "eslint-plugin-import": "^2.2.0",
