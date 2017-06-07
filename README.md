@@ -49,6 +49,15 @@ console.log([0, 1, 2][$random]) // 0, 1, or 2
 
 ### Object
 
+#### `Object[$dig](props, fallback)`
+
+Dig nested properties.
+
+```javascript
+{ a : { b : { c : 'd' } } }[$dig](['a', 'b', 'c']) // 'd'
+{ a : { b : { c : 'd' } } }[$dig](['a', 'X'], 'no props') // 'no props'
+```
+
 #### `Object[$keys]`
 
 Wrapper of `Object.keys`.
