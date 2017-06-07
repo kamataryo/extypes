@@ -17,7 +17,7 @@ cache:
 before_script:
   - "npm run build"
   - "yarn global add codecov"
-  - "yarn global add nuc"
+  - "yarn global add npm-check-updates"
 
 script:
   - "npm run lint"

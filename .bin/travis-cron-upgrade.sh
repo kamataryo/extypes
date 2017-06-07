@@ -16,7 +16,7 @@ if [ $TRAVIS_EVENT_TYPE != "cron" ] || [ $TRAVIS_BRANCH != "master" ]; then
   exit 0
 fi
 
-nuc -u
+npm-check-updates -u
 
 if [[ $(git --no-pager diff) == "" ]]; then
   echo 'nothing to deploy automatically.'
