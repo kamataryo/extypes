@@ -1,9 +1,9 @@
 {
   "name": "@kamataryo/extypes",
   "version": "0.2.15",
-  "author": "kamataryo <kamataryo@users.noreply.github.com>",
+  "author": "kamataryo <mugil.cephalus+github.com@gmail.com>",
   "license": "MIT",
-  "description": "Light and safe JavaScript Data type extensions",
+  "description": "Lightweight and safe JavaScript Data type extensions",
   "main": "./index.js",
   "publishConfig": {
     "access": "public"
@@ -14,7 +14,7 @@
     "test": "cross-env NODE_PATH=./src ava",
     "coverage": "nyc --reporter=lcov --reporter=text-lcov npm test",
     "preversion": "npm run lint && npm test",
-    "postversion": "git pull origin master && git push origin master && git push origin $(git describe --abbrev=0 --tags)"
+    "postversion": "git fetch && git pull origin master && git push origin master && git push origin $(git describe --abbrev=0 --tags)"
   },
   "ava": {
     "files": [

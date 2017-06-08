@@ -16,6 +16,7 @@ if [ $TRAVIS_EVENT_TYPE != "cron" ] || [ $TRAVIS_BRANCH != "master" ]; then
   exit 0
 fi
 
+yarn upgrade
 npm-check-updates -u
 
 if [[ $(git --no-pager diff) == "" ]]; then
@@ -32,7 +33,7 @@ git branch $BRANCH_TO_DEPLOY
 
 git checkout master
 git add .
-git commit -m "Upgrade package [cron]"
-npm version patch -m "Upgrade package [cron]"
+git commit -m "Upgrade package [made in travis cron]"
+npm version patch -m "Upgrade package [made in travis cron]"
 
 git checkout $BRANCH_TO_DEPLOY
