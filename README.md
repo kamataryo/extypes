@@ -66,6 +66,12 @@ Wrapper of `Object.keys`.
 { foo: 'FOO', bar: 'BAR' }[$keys] // ['foo', 'bar']
 ```
 
+#### `Object[$multiply]()`
+
+```javascript
+{ a: 'A' }[$multiply](3) // [{ a: 'A' }, { a: 'A' }, { a: 'A' }]
+```
+
 #### `Object[$values]`
 
 Wrapper of `Object.values`.
