@@ -8,7 +8,7 @@ if (!Array.prototype[$intersect]) {
    */
   Array.prototype[$intersect] = function(arr) {
     return this
-        .filter(element => arr.indexOf(element) !== -1)
+      .filter(element => arr.indexOf(element) !== -1)
   }
 }
 

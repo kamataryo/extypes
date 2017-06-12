@@ -15,8 +15,8 @@ if (!Array.prototype[$weightedRandom]) {
 
     const weights = (
       Array(self.length)
-        .fill(0)
-        .map((x, i) => x + arg[i] ? arg[i] : 0)
+      .fill(0)
+      .map((x, i) => x + arg[i] ? arg[i] : 0)
     )
 
     const sum = weights.reduce((prev, x) => prev + x, 0)

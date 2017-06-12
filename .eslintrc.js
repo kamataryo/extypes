@@ -27,7 +27,7 @@ module.exports = {
       2,
       {
         SwitchCase: 1,
-        MemberExpression: 2,
+        MemberExpression: 1,
       }
     ],
     'jsx-quotes': ['error', 'prefer-double'],
