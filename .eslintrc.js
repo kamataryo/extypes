@@ -22,7 +22,14 @@ module.exports = {
     'arrow-spacing': ['error', { 'before': true, 'after': true }],
     'brace-style': ['error', '1tbs', { 'allowSingleLine': true }],
     'comma-spacing': ['error', { 'before': false, 'after': true }],
-    'indent': ['error', 2, { 'SwitchCase': 1 }],
+    indent: [
+      'error',
+      2,
+      {
+        SwitchCase: 1,
+        MemberExpression: 2,
+      }
+    ],
     'jsx-quotes': ['error', 'prefer-double'],
     'key-spacing': ['off'],
     'keyword-spacing': ['error'],
