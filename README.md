@@ -153,6 +153,14 @@ Applied argument after curried.
 ((a, b, c) => a + b + c)[$partialApply](1, 2)[$appliedArguments] // [1, 2]
 ```
 
+#### `Function[$repeat](args, num)`
+
+Call function repeatedly.
+
+```javascript
+((a, b, c) => a + b + c)[$repeat]([1, 2, 3], 2) // [6, 6]
+```
+
 ### Number
 
 #### `Number[$toRange]()`
