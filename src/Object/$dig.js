@@ -10,7 +10,7 @@ if (!Object.prototype[$dig]) {
    */
   Object.prototype[$dig] = function(props, fallback) {
     return props.reduce((prev, prop) => {
-      if (prev[prop] !== undefined) {
+      if (prev[prop] !== void 0) {
         return prev[prop]
       } else {
         return fallback

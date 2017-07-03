@@ -16,7 +16,7 @@ if (!Array.prototype[$decumulatives]) {
           return prev
         }, { cumulative: 0, result: [] })
         .result
-    }
+    },
   })
 }
 

@@ -19,10 +19,10 @@ const $switch = Symbol('switch')
       },
       default: handler => {
         switchSubject(t => t.default(handler))
-      }
+      },
     }
     return chain
-  }
+  },
 })
 
 export default $switch

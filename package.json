@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "babel ./src --out-dir ./dist --source-maps true",
-    "lint": "eslint . --ext=jsx --ext=js",
+    "lint": "eslint . --ext=js",
     "test": "cross-env NODE_PATH=./src ava",
     "coverage": "nyc --reporter=lcov --reporter=text-lcov npm test",
     "preversion": "git pull --no-ff origin master && npm run lint && npm test",

@@ -5,7 +5,7 @@ const $keys = Symbol('keys')
    * get Object keys
    * @return {Array} keys of the Object
    */
-  get: function() { return Object.keys(this) }
+  get: function() { return Object.keys(this) },
 })
 
 export default $keys
